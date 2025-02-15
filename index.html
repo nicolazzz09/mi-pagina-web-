@@ -283,5 +283,32 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         </div>
     </div>
+	<script type="module">
+  // Importar la librería de Supabase
+  import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+  // Configurar Supabase
+  const supabaseUrl = "TU_SUPABASE_URL";  // Reemplaza con tu URL
+  const supabaseKey = "TU_PUBLIC_API_KEY";  // Reemplaza con tu API Key
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
+  async function guardarDatos() {
+    const nombre = document.getElementById("nombre").value;
+    const email = document.getElementById("email").value;
+    const contraseña = document.getElementById("password").value;
+
+    // Guardar en la base de datos
+    const { data, error } = await supabase
+      .from("usuarios")
+      .insert([{ nombre, email, contraseña }]);
+
+    if (error) {
+      console.error("Error al guardar:", error);
+      alert("Hubo un error al guardar.");
+    } else {
+      alert("Datos guardados correctamente.");
+    }
+  }
+</script>
 </body>
 </html>
