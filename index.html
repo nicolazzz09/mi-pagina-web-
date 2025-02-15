@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restablecer Contraseña</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+        .top-bar {
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+            font-size: 14px;
+        }
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .logo-bar {
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #C9A32C;
+            display: flex;
+            align-items: center;
+        }
+        .logo span {
+            color: #888;
+        }
+        .logo img {
+            max-height: 27px;
+            margin-right: 9px;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        .search-bar input {
+            border: none;
+            border-bottom: 1px solid black;
+            padding: 5px;
+        }
+        .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-bar {
+            background: #C9A32C;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+        }
+        .cta-bar a {
+            color: white;
+            text-decoration: none;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            margin: 50px auto;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #1a252f;
+        }
+        .footer {
+            
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+		{
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #333;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .logo img {
+            height: 40px;
+        }
+        .subscribe {
+            display: flex;
+            align-items: center;
+        }
+        .subscribe input {
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            margin-right: 3px;
+        }
+        .subscribe button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .subscribe button:hover {
+            background-color: #555;
+        }
+        .title {
+            color: gold;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .footer {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .bottom-bar {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+        }
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+        .social-icons img {
+            height: 20px;
+            margin-left: 10px;
+        }
+        .security-logos {
+            display: flex;
+            align-items: center;
+        }
+        .security-logos img {
+            height: 30px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div>
+            <a href="#">📍 Tiendas</a>
+            <a href="#">📖 Ver catálogo</a>
+            <a href="#">🚚 Seguir Orden</a>
+        </div>
+        <div>
+            <a href="#">🔍 Buscar...</a>
+            <a href="#">👤 Iniciar sesión</a>
+            <a href="#">🛒</a>
+        </div>
+    </div>
+    <div class="logo-bar">
+        <div class="logo">
+            <img src="../Downloads/logo-potros.webp" alt="Logo">
+           
+        </div>
+        <div class="menu">
+            <a href="#">NUEVA COLECCIÓN ▼</a>
+            <a href="#">VESTUARIO ▼</a>
+            <a href="#">SALE ▼</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <button>🔍</button>
+        </div>
+    </div>
+    <div class="cta-bar">
+        <a href="#">REVISA EL PROCESO DE CAMBIO Y DEVOLUCIONES AQUÍ</a>
+    </div>
+    <div class="container">
+        <h2>Restablecer Contraseña</h2>
+        <p>Por favor, ingresa la información necesaria para cambiar tu contraseña.</p>
+        <form>
+            <input type="password" placeholder="Ingrese contraseña actual" required>
+            <input type="password" placeholder="Ingrese nueva contraseña" required>
+            <input type="password" placeholder="Repita la nueva contraseña" required>
+            <button type="submit">Actualizar contraseña</button>
+        </form>
+        <p class="footer">Por seguridad, nunca compartas tu contraseña.</p>
+    </div>
+	<div class="header">
+        <div class="logo">
+            <img src="../Downloads/potros-logo-footer.webp" alt="Logo">
+        </div>
+        <div class="title">Boletín informativo</div>
+        <div class="subscribe">
+            <input type="email" placeholder="Introduzca su dirección de correo">
+            <button>Suscribirse</button>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="#">SOBRE POTROS ></a>
+        <a href="#">TUS COMPRAS ></a>
+        <a href="#">CONTACTOS ></a>
+        <a href="#">ATENCIÓN A CLIENTES ></a>
+    </div>
+
+    <div class="bottom-bar">
+        <div>
+            <img src="../Downloads/pngegg (1).png" alt="100" height="50">
+        </div>
+        <div class="social-icons">
+            <span>REDES SOCIALES</span>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <img src="../Downloads/pngwing.com (3).png">
+            </a>
+        </div>
+        <div class="security-logos">
+            <img src="../Downloads/webpay-footer.webp" alt="WebPay">
+            <img src="../Downloads/certificadoCCS.webp" alt="Security">
+            <img src="../Downloads/logo-grupotexsa.webp" alt="Grupo TEXSA">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </div>
+    </div>
+</body>
+</html>
