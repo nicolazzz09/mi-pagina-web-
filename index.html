@@ -112,22 +112,15 @@
             background: #1a252f;
         }
         .footer {
-            
             font-size: 12px;
             color: #7f8c8d;
-        }
-		{
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #333;
         }
         .header {
             background-color: #333;
             color: white;
-            display:flex;
+            display: flex;
             justify-content: space-between;
             align-items: center;
-            
         }
         .logo img {
             height: 40px;
@@ -200,6 +193,50 @@
             margin: 0 10px;
         }
     </style>
+    <!-- Incluir el script de Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script>
+        // Configura tu cliente Supabase con tus credenciales
+        const supabaseUrl = 'https://ftdvcmkrzmcycknsvxac.supabase.co/'; // Cambia esto por tu URL de Supabase
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0ZHZjbWtyem1jeWNrbnN2eGFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk2NDYxNjksImV4cCI6MjA1NTIyMjE2OX0.wLleCp0JQxZH8cSmxmr6JSZRz4VGbAnCEUbHrbPgKHg'; // Cambia esto por tu clave pública
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+        async function actualizarContraseña(event) {
+            event.preventDefault();
+
+            const oldPassword = document.getElementById('oldPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Verifica si las contraseñas coinciden
+            if (newPassword !== confirmPassword) {
+                alert('Las contraseñas no coinciden.');
+                return;
+            }
+
+            // Aquí deberías hacer una validación para verificar que el "oldPassword" sea correcto.
+            // Este ejemplo asume que se ha comprobado que el usuario ha iniciado sesión y está autenticado.
+
+            try {
+                // Actualizar la contraseña en la base de datos (ajusta esto según tu estructura de base de datos)
+                const user = supabase.auth.user(); // Obtén al usuario autenticado
+                const { data, error } = await supabase
+                    .from('users') // Cambia el nombre de la tabla si es necesario
+                    .update({ password: newPassword }) // El campo "password" en la tabla
+                    .eq('id', user.id); // Asegúrate de que se está actualizando la contraseña del usuario correcto
+
+                if (error) {
+                    console.error('Error al actualizar la contraseña', error);
+                    alert('Hubo un error al actualizar la contraseña');
+                } else {
+                    alert('Contraseña actualizada correctamente');
+                }
+            } catch (error) {
+                console.error('Error en la solicitud', error);
+                alert('Hubo un error inesperado');
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="top-bar">
@@ -217,7 +254,6 @@
     <div class="logo-bar">
         <div class="logo">
             <img src="../Downloads/logo-potros.webp" alt="Logo">
-           
         </div>
         <div class="menu">
             <a href="#">NUEVA COLECCIÓN ▼</a>
@@ -235,15 +271,15 @@
     <div class="container">
         <h2>Restablecer Contraseña</h2>
         <p>Por favor, ingresa la información necesaria para cambiar tu contraseña.</p>
-        <form>
-            <input type="password" placeholder="Ingrese contraseña actual" required>
-            <input type="password" placeholder="Ingrese nueva contraseña" required>
-            <input type="password" placeholder="Repita la nueva contraseña" required>
+        <form onsubmit="actualizarContraseña(event)">
+            <input type="password" id="oldPassword" placeholder="Ingrese contraseña actual" required>
+            <input type="password" id="newPassword" placeholder="Ingrese nueva contraseña" required>
+            <input type="password" id="confirmPassword" placeholder="Repita la nueva contraseña" required>
             <button type="submit">Actualizar contraseña</button>
         </form>
         <p class="footer">Por seguridad, nunca compartas tu contraseña.</p>
     </div>
-	<div class="header">
+    <div class="header">
         <div class="logo">
             <img src="../Downloads/potros-logo-footer.webp" alt="Logo">
         </div>
@@ -283,32 +319,5 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         </div>
     </div>
-	<script type="module">
-  // Importar la librería de Supabase
-  import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
-  // Configurar Supabase
-  const supabaseUrl = "TU_SUPABASE_URL";  // Reemplaza con tu URL
-  const supabaseKey = "TU_PUBLIC_API_KEY";  // Reemplaza con tu API Key
-  const supabase = createClient(supabaseUrl, supabaseKey);
-
-  async function guardarDatos() {
-    const nombre = document.getElementById("nombre").value;
-    const email = document.getElementById("email").value;
-    const contraseña = document.getElementById("password").value;
-
-    // Guardar en la base de datos
-    const { data, error } = await supabase
-      .from("usuarios")
-      .insert([{ nombre, email, contraseña }]);
-
-    if (error) {
-      console.error("Error al guardar:", error);
-      alert("Hubo un error al guardar.");
-    } else {
-      alert("Datos guardados correctamente.");
-    }
-  }
-</script>
 </body>
 </html>
